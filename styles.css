@@ -1,0 +1,231 @@
+:root {
+  --clr-card: hsl(300, 43%, 22%);
+  --clr-rating: hsl(333, 80%, 67%);
+  --clr-dgray-mag: hsl(303, 10%, 53%);
+  --clr-lgray-mag: hsl(300, 24%, 96%);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+* {
+  padding: 0;
+  margin: 0;
+  font: inherit;
+}
+html:focus-within {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%; /* 2 */
+}
+html,
+body {
+  min-height: 100vh;
+}
+
+body {
+  width: 100%;
+  font-family: 'League Spartan', sans-serif;
+  font-size: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: url(images/bg-pattern-top-mobile.svg) top left no-repeat,
+    url(images/bg-pattern-bottom-mobile.svg) bottom right no-repeat;
+}
+
+img {
+  display: block;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr;
+  place-content: center;
+  padding: 1.5rem;
+  margin: 3rem 0;
+  row-gap: 2rem;
+}
+section {
+  display: grid;
+  grid-template-columns: 1fr;
+  width: 100%;
+}
+.header {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  row-gap: 1rem;
+  place-content: center;
+  text-align: center;
+}
+h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--clr-card);
+}
+.header p {
+  line-height: 1.5;
+  color: var(--clr-dgray-mag);
+  font-weight: 500;
+  font-size: 1rem;
+}
+.ratings {
+  width: 100%;
+  display: grid;
+  row-gap: 1rem;
+}
+
+.ratings-sub {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  row-gap: 1rem;
+  background-color: var(--clr-lgray-mag);
+  border-radius: 0.5rem;
+  padding: 1rem 0;
+}
+.stars {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0 1rem;
+}
+.company {
+  display: flex;
+  justify-content: center;
+  color: var(--clr-card);
+  font-weight: 700;
+}
+.card-section {
+  row-gap: 1rem;
+}
+.card {
+  display: grid;
+  grid-template-rows: 1fr 2fr;
+  place-content: start;
+  background-color: var(--clr-card);
+  border-radius: 0.5rem;
+  row-gap: 1rem;
+  color: var(--clr-lgray-mag);
+  font-weight: 500;
+  line-height: 1.5rem;
+  padding: 2rem;
+  font-size: 1rem;
+}
+.person {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  gap: 1rem;
+  align-items: center;
+}
+
+.person img {
+  border-radius: 50%;
+  width: 100%;
+}
+.buyer {
+  color: var(--clr-rating);
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: var(--clr-rating);
+  text-decoration: none;
+}
+.attribution a:hover,
+.attribution a:focus {
+  color: var(--clr-card);
+}
+
+@media (min-width: 400px) {
+  main {
+    margin: 1rem 0;
+  }
+  .card {
+    grid-template-rows: 1fr 1fr;
+    max-width: 25rem;
+  }
+  .container-start,
+  .container-center,
+  .container-end {
+    display: grid;
+  }
+  .container-center {
+    place-content: center;
+  }
+  .container-end {
+    place-content: end;
+  }
+  .container-start {
+    place-content: start;
+  }
+}
+@media (min-width: 1200px) {
+  body {
+    background: url(images/bg-pattern-top-desktop.svg) top left no-repeat,
+      url(images/bg-pattern-bottom-desktop.svg) bottom right no-repeat;
+  }
+  main {
+    grid-template-rows: 1fr 1.2fr;
+    margin: 0 15vw;
+  }
+  .ratings-section {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    column-gap: 1rem;
+    height: max-content;
+  }
+  .card-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 0.5rem;
+  }
+  .header {
+    text-align: left;
+  }
+  h1 {
+    font-size: 3rem;
+  }
+  .ratings-sub {
+    width: 70%;
+    display: flex;
+    place-content: start;
+    gap: 1rem;
+    padding: 0;
+  }
+  .ratings {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+  }
+
+  .company {
+    display: grid;
+    grid-template-columns: 1fr;
+    place-content: center;
+  }
+  .stars {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    place-content: center;
+  }
+  .ratings-start,
+  .ratings-center,
+  .ratings-end {
+    display: flex;
+  }
+  .ratings-start {
+    justify-content: flex-start;
+  }
+  .ratings-center {
+    justify-content: center;
+  }
+  .ratings-end {
+    justify-content: end;
+  }
+}
