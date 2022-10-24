@@ -32,7 +32,7 @@ Desktop
 ![Desktop](screenshots/desktop-screenshot.jpg)
 
 Mobil
-![Mobil](screeshots/mobile-screenshot.jpg)
+![Mobil](screenshots/mobile-screenshot.jpg)
 
 ## My process
 
